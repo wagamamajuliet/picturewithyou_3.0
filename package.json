@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "reactotron-react-js": "^1.13.0",
+    "reactotron-redux": "^1.13.0"
+  }
+}
