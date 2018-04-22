@@ -16,10 +16,16 @@ urlpatterns = [
     ),
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
-    # User management
     url(
-        r"^api-token-auth/", obtain_jwt_token
+        r"^rest-auth/", include('rest_auth.urls'),
     ),
+    url(
+        r'^rest-auth/registration/', include('rest_auth.registration.urls')
+    ),
+    # User management
+    # url(
+    #     r"^api-token-auth/", obtain_jwt_token
+    # ),
     url(
         r"^users/",
         include("picturewithyou.users.urls", namespace="users"),

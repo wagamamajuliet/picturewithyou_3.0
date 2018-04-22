@@ -185,6 +185,7 @@ module.exports = {
                         modules:true,
                         localIdentName:'[path][name]__[local]--[hash:base64:5]',
                         sourceMap: shouldUseSourceMap,
+                        camelCase:"dashes"
                       },
                     },
                     {
@@ -212,7 +213,7 @@ module.exports = {
                       loader:require.resolve("sass-loader"),
                       options: {
                         sourceMap:true,
-                        data:`@import "C:\Users\Owner\djangoreact\picturewithyou\frontend\src\config";`
+                        data:`@import "C:/Users/Owner/djangoreact/picturewithyou/frontend/src/config/_variables.scss";`
                       }
                     }
                   ],

@@ -1,8 +1,30 @@
 export const translations = {
-	es: {
-		"Login in":"Initial Session"
-	},
-	kr: {
-		"Login in":"hangul"
-	}
-};
+  'es': {
+    'Have an account?': 'ya tiens una cuenta?',
+    'Log in': 'Inciar Sesiom',
+    'Don`t have an account?': '',
+    'Sign up': '',
+    'Username': '',
+    'or': '',
+    'Log in with Facebook': '',
+    'Sign up to see photos and videos from your friends.': '',
+    'Email': '',
+    'Full Name': '',
+    'Password': '',
+    'By signing up, you agree to our ': '',
+    'Terms & Privacy Policy': '',
+    'About Us': '',
+    'Support': '',
+    'Blog': '',
+    'Press': '',
+    'API': '',
+    'Jobs': '',
+    'Privacy': '',
+    'Terms': '',
+    'Directory': '',
+    'Language': '',
+    '© 2017 Nomadgram': '',
+  },
+  'options': {
+  },
+}

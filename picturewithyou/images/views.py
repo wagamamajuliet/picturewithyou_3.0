@@ -8,7 +8,7 @@ from picturewithyou.users import serializers as user_serializers
 from picturewithyou.notifications import views as notification_views
 
 # Create your views here.
-class Feed(APIView):
+class Images(APIView):
 	def get(self, request, format=None):
 
 		user = request.user
@@ -41,6 +41,20 @@ class Feed(APIView):
 			# print(following_user.images.all()[:1])
 
 		# return Response(status=200)
+	def post(self, request, format=None):
+
+		user = request.user
+
+		serializer = serializers.InputImageSerializer(data=request.data)
+
+		if serializer.is_valid():
+
+			serializer.save(creator = user)
+
+			return Response(data=serializer.data, status=status.HTTP_201_CREATED)
+
+		else: 
+			return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # def get_key(image):
 # 	return image.created_at
