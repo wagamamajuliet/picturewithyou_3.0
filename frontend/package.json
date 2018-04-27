@@ -39,10 +39,13 @@
     "react": "^16.3.1",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.3.1",
+    "react-facebook-login": "^4.0.1",
     "react-ionicons": "^2.1.6",
     "react-redux": "^5.0.7",
+    "react-router": "4.0.0-alpha.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
+    "react-textarea-autosize": "^6.1.0",
     "reactotron-react-js": "^1.13.0",
     "redux": "^3.7.2",
     "redux-i18n": "^1.5.13",
@@ -60,11 +63,11 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "set HTTPS=true&&node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "extract": "i18n_extract",
-    "import" : "i18n_import --encoding=utf-8"
+    "import": "i18n_import --encoding=utf-8"
   },
   "jest": {
     "collectCoverageFrom": [

@@ -4,7 +4,7 @@ from . import views
 app_name = "images" # Django 2.0 need it.
 urlpatterns = [
     url(
-        regex=r'^all/$',
+        regex=r'^$',
         view=views.Images.as_view(),
         name='feed'
     ),

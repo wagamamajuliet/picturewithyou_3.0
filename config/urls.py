@@ -20,7 +20,7 @@ urlpatterns = [
         r"^rest-auth/", include('rest_auth.urls'),
     ),
     url(
-        r'^rest-auth/registration/', include('rest_auth.registration.urls')
+        r'^rest-auth/registration/', include('rest_auth.registration.urls'),
     ),
     # User management
     # url(
@@ -39,11 +39,15 @@ urlpatterns = [
         include("picturewithyou.notifications.urls", namespace="notifications"),
     ),
     url(r"^accounts/", include("allauth.urls")),
-    url(r'^', views.ReactAppView.as_view()),
+    # url(r'^', views.ReactAppView.as_view()),
     # Your stuff: custom urls includes go here
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
+
+urlpatterns += [
+    url(r'^', views.ReactAppView.as_view()),
+]
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit

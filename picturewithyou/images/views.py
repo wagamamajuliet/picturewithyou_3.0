@@ -33,14 +33,10 @@ class Images(APIView):
 
 		sorted_list = sorted(image_list, key=lambda image: image.created_at, reverse=True)
 
-		serializer = serializers.ImageSerializer(sorted_list, many=True)
+		serializer = serializers.ImageSerializer(sorted_list, many=True, context={'request': request})
 
 		return Response(serializer.data)
-		# print(sorted_list)
-		# print(image_list)
-			# print(following_user.images.all()[:1])
 
-		# return Response(status=200)
 	def post(self, request, format=None):
 
 		user = request.user
@@ -256,7 +252,7 @@ class ImageDetail(APIView):
 
 		if image is None:
 
-			return Response(status=status.HTTP_401_UNAUTHORIZED)
+			return Response(status=status.HTTP_400_BAD_REQUEST)
 
 		# try:
 		# 	image = models.Image.objects.get(id=image_id, creator=user)
@@ -283,7 +279,7 @@ class ImageDetail(APIView):
 
 		if image is None:
 
-			return Response(status=status.HTTP_401_UNAUTHORIZED)
+			return Response(status=status.HTTP_400_BAD_REQUEST)
 
 		image.delete()
 
